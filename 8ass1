@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+struct student
+{
+	int no;
+	char name[20];
+	int marks[5];
+};
+void main()
+{
+	struct student s1;
+	int i,total=0;
+	float avg;
+	clrscr();
+	printf("Enter the Student Number:");
+	scanf("%d",&s1.no);
+	flushall ();
+	printf("Enter the Student Name:");
+	gets (s1.name);
+	flushall();
+	printf("Enter the Five subject marks:");
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",&s1.marks[i]);
+	}
+	for(i=0;i<5;i++)
+	{
+		total=total+s1.marks[i];
+	}
+	printf("Student number is:%d \n",s1.no);
+	printf("Student name is:%s \n",s1.name);
+	printf("Subject marks:\n");
+	for(i=0;i<5;i++)
+	{
+		printf("%d \n",s1.marks[i]);
+	}
+	printf("Total of five subject marks:%d \n ",total);
+	avg=(float)total/5;
+	printf("Avg of five subject marks:%f",avg);
+	getch();
+}
